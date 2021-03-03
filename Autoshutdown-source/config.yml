@@ -24,7 +24,7 @@ physicalShutdown: false
 physicalShutdownDelay: 1
 
 #message to be displayed if the command executor does not have the required permissions
-noPermission: "Foolish! You do not have permission to execute this command"
+noPermission: "§cFoolish! You do not have permission to execute this command"
 
 #Permission to abort the shutdown
 permissionAbort: "autoshutdown.abort"
