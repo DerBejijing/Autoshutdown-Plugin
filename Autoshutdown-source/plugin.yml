@@ -1,0 +1,9 @@
+name: Autoshutdown
+version: 1.0
+main: net.derbejijing.autoshutdown.Main
+
+commands:
+   abort:
+   enable:
+   reschedule:
+   getshutdown:

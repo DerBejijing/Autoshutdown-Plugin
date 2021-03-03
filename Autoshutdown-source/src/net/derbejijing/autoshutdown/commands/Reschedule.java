@@ -1,0 +1,37 @@
+package net.derbejijing.autoshutdown.commands;
+
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+
+import net.derbejijing.autoshutdown.Main;
+import net.derbejijing.autoshutdown.Utils.Utilities;
+
+public class Reschedule implements CommandExecutor {
+	
+	@Override
+	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+		String prefix = Main.instance.Prefix;
+		
+		if(sender.hasPermission(Main.instance.permissionReschedule)) {
+			
+			if(args.length == 1) {
+				Main.instance.getConfig().set("shutdown", args[0]);
+				
+				Main.instance.saveConfig();
+				
+				Main.instance.shutdown = args[0];
+				
+				Main.instance.adjustShutdownDate();
+				
+				Utilities.broadcast("§eShutdown time changed to [§c" + args[0] + "§e]!");
+				return true;
+			} else {
+				sender.sendMessage("§cInvalid input");
+			}
+			
+		} else sender.sendMessage(prefix + " " + Main.instance.noPermission);
+		return false;
+	}
+
+}
