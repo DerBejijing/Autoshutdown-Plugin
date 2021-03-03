@@ -69,4 +69,3 @@ You are not allowed to use this, for whatever reason, for commercial purposes.
 
 **Updates and bugfixes**  
 I am always working on finding and eliminating bugs. So if you find one, feel free to cantact me. Another problem is that for some reason the comments disappear after the config is saved... I am still working on that.  
-_btw, while I wrote this readme I already found some more bugs. Will be fixed soon_
