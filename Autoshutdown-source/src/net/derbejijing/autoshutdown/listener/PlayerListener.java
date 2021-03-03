@@ -18,7 +18,7 @@ public class PlayerListener implements Listener {
 		player.sendMessage(prefix + " §7Server is running §aDer_Bejijing's Autoshutdown plugin");
 		
 		if(Main.instance.active) {
-			if(Main.instance.publicShutdown) player.sendMessage(prefix + " §7Shutdown scheduled at " + shutdown);
+			player.sendMessage(prefix + " §7Shutdown scheduled at " + shutdown);
 		} else {
 			player.sendMessage(prefix + " §7No shutdown active");
 		}

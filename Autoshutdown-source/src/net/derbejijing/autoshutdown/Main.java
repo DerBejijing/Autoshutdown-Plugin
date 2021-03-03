@@ -35,7 +35,6 @@ public class Main extends JavaPlugin {
 	
 	public boolean active;
 	public boolean physicalShutdown;
-	public boolean publicShutdown = true;
 	
 	public int physicalShutdownDelay;
 	
@@ -64,7 +63,6 @@ public class Main extends JavaPlugin {
 		shutdownWarnings = config.getIntegerList("shutdownWarnings");
 		physicalShutdown = config.getBoolean("physicalShutdown");
 		active = config.getBoolean("active");
-		publicShutdown = config.getBoolean("publicShutdown");
 		physicalShutdownDelay = config.getInt("physicalShutdownDelay");
 		
 		noPermission = config.getString("noPermission");

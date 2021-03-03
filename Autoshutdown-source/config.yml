@@ -1,14 +1,10 @@
 #Info: all dates are written in the format HH:mm:ss
 
-#wether everyone knows when the shutdown is scheduled
-#affects the join message AND the /getshutdown command
-publicShutdown: true
-
 #wether the shutdown is enabled
 active: false
 
 #time for the server to shutdown
-shutdown: "21:10:00"
+shutdown: "00:00:00"
 
 #warning times
 shutdownWarnings:
