@@ -34,7 +34,7 @@ shutdownWarnings:
    - 1800
 
 #Wether the physical computer should shutdown after the server did
-#WARNING: on Linux and MAC this is a quite brutal shutdown (shutdown -h), so make sure there is no unsafed data that wouldn't survive a shutdown
+#WARNING: on Linux and Mac this is a quite brutal shutdown (shutdown -h), so make sure there is no unsafed data that wouldn't survive a shutdown
 physicalShutdown: false
 
 #specify a physical shutdown delay (minutes)
