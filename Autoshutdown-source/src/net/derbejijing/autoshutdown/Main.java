@@ -93,7 +93,7 @@ public class Main extends JavaPlugin {
 		        		if(physicalShutdown) {
 		        			ShutdownThread st = new ShutdownThread();
 		        			st.delay = physicalShutdownDelay;
-		            		st.start();
+		            			st.start();
 		        		}
 		        		
 		        		getServer().shutdown();
