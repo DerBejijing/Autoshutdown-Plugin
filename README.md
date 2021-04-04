@@ -13,18 +13,18 @@ When the plugin is loaded for the first time, the config file is created in `/pl
 ```
 #Info: all dates are written in the format HH:mm:ss
 
-#wether everyone knows when the shutdown is scheduled
-#affects the join message AND the /getshutdown command
-publicShutdown: true
-
 #wether the shutdown is enabled
-active: false
+active: true
 
 #time for the server to shutdown
-shutdown: "21:10:00"
+shutdown: "99:99:99"
 
 #warning times
 shutdownWarnings:
+   - 1
+   - 2
+   - 3
+   - 4
    - 5
    - 10
    - 30
@@ -34,7 +34,7 @@ shutdownWarnings:
    - 1800
 
 #Wether the physical computer should shutdown after the server did
-#WARNING: on Linux and Mac this is a quite brutal shutdown (shutdown -h), so make sure there is no unsafed data that wouldn't survive a shutdown
+#WARNING: on Linux and MAC this is a quite brutal shutdown (shutdown -h), so make sure there is no unsafed data that wouldn't survive a shutdown
 physicalShutdown: false
 
 #specify a physical shutdown delay (minutes)
@@ -50,7 +50,7 @@ permissionAbort: "autoshutdown.abort"
 permissionEnable: "autoshutdown.enable"
 
 #Permission to reschedule the shutdown
-permissionEnable: "autoshutdown.reschedule"
+permissionReschedule: "autoshutdown.reschedule"
 ```
 One more word to Platforms. It is tested on multiple Linux distributions and macOS. Technically it should work on windows 10, but there is really no reason to run a minecraft server on windows lmao. Also note that the physical shutdown does not take care of **any** unsafed data as already mentioned. For the physicalShutdownDelay rather use a bit more than too less.  
 
