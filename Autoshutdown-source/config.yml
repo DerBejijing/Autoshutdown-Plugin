@@ -34,9 +34,3 @@ permissionEnable: "autoshutdown.enable"
 
 #Permission to reschedule the shutdown
 permissionEnable: "autoshutdown.reschedule"
-
-#worlds to backup
-worlds:
-  - "world"
-  - "world_nether"
-  - "world_the_end"
