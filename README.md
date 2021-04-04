@@ -6,7 +6,7 @@ A minecraft spigot / paper MC / etc. Plugin to automate Server shutdowns
 The repository includes the `Autoshutdown.jar` you can use like any other Plugin, and the sourcecode. To modify it you will need to setup a workspace for making Plugins, which you can learn elsewhere.  
 
 **VERY VERY IMPORTANT**  
-By default the shutdown is disabled!! You will have to either use `/enable` or the config file to activate it!  
+By default the shutdown is set to `"99:99:99"`, which is, as we may know, a time that will most likely not happen. You need to change time by either editing the config file or using the `/reschedule` command.  
 
 **Config file**  
 When the plugin is loaded for the first time, the config file is created in `/plugins/Autoshutdown`. There you can set the shutdown time, when warnings should be displayed, if the physical server should also be shut down, and more. Let's break down all the settings:  
