@@ -1,5 +1,6 @@
 package net.derbejijing.autoshutdown.listener;
 
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -15,12 +16,12 @@ public class PlayerListener implements Listener {
 		String prefix = Main.instance.Prefix;
 		String shutdown = Main.instance.shutdown;
 		
-		player.sendMessage(prefix + " §7Server is running §aDer_Bejijing's Autoshutdown plugin");
+		player.sendMessage(prefix + ChatColor.GRAY +" Server is running " + ChatColor.GREEN + "§aDer_Bejijing's Autoshutdown plugin");
 		
 		if(Main.instance.active) {
-			player.sendMessage(prefix + " §7Shutdown scheduled at " + shutdown);
+			player.sendMessage(prefix + ChatColor.GRAY + " Shutdown scheduled at [" + ChatColor.RED + shutdown + ChatColor.GRAY + "]");
 		} else {
-			player.sendMessage(prefix + " §7No shutdown active");
+			player.sendMessage(prefix + ChatColor.GRAY + " No shutdown active");
 		}
 	}
 	
