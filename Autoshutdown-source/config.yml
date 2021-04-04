@@ -35,12 +35,6 @@ permissionEnable: "autoshutdown.enable"
 #Permission to reschedule the shutdown
 permissionEnable: "autoshutdown.reschedule"
 
-#After shutting down, the plugin will create a zip file containing all your specified worlds
-createBackup: true
-
-#backup folder
-backupDir: "backups"
-
 #worlds to backup
 worlds:
   - "world"
