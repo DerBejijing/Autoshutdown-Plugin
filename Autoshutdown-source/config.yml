@@ -1,10 +1,10 @@
 #Info: all dates are written in the format HH:mm:ss
 
 #wether the shutdown is enabled
-active: false
+active: true
 
 #time for the server to shutdown
-shutdown: "00:00:00"
+shutdown: "99:99:99"
 
 #warning times
 shutdownWarnings:
@@ -37,4 +37,4 @@ permissionAbort: "autoshutdown.abort"
 permissionEnable: "autoshutdown.enable"
 
 #Permission to reschedule the shutdown
-permissionEnable: "autoshutdown.reschedule"
+permissionReschedule: "autoshutdown.reschedule"

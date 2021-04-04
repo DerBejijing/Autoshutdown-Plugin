@@ -34,7 +34,7 @@ public class Main extends JavaPlugin {
 	public String permissionEnable = "autoshutdown.enable";
 	public String permissionReschedule = "autoshutdown.reschedule";
 	
-	public boolean active;
+	public boolean active = true;
 	public boolean physicalShutdown;
 	
 	public int physicalShutdownDelay;
@@ -69,6 +69,7 @@ public class Main extends JavaPlugin {
 		noPermission = config.getString("noPermission");
 		permissionAbort = config.getString("permissionAbort");
 		permissionEnable = config.getString("permissionEnable");
+		permissionReschedule = config.getString("permissionReschedule");
 		
 		logger.info(Prefix + " Der_Bejijing's Autoshutdown loaded!");
 		if(active) {
