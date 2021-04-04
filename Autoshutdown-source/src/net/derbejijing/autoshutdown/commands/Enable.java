@@ -1,5 +1,6 @@
 package net.derbejijing.autoshutdown.commands;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -21,11 +22,11 @@ public class Enable implements CommandExecutor {
 				
 				Main.instance.active = true;
 				
-				Utilities.broadcast("§7Shutdown enabled and scheduled at [§c" + Main.instance.shutdown + "§7]!");
+				Utilities.broadcast(ChatColor.GRAY + "Shutdown enabled and scheduled at [§c" + Main.instance.shutdown + "§7]!");
 				
 				return true;
 			} else {
-				sender.sendMessage(prefix + " §cShutdown already enabled");
+				sender.sendMessage(prefix + ChatColor.RED + " Shutdown already enabled");
 			}
 		} else sender.sendMessage(prefix + " " + Main.instance.noPermission);
 		return false;

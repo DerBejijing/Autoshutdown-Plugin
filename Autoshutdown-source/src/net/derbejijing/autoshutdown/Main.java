@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -25,9 +26,9 @@ public class Main extends JavaPlugin {
 	public Logger logger;
 	
 	public List<Integer> shutdownWarnings;
-	public String Prefix = "§6[Autoshutdown]§r";
+	public String Prefix = ChatColor.GOLD + "[Autoshutdown]" + ChatColor.RESET;
 	public String shutdown;
-	public String noPermission = "§cNo permission to execute this command";
+	public String noPermission = ChatColor.RED + "No permission to execute this command";
 	
 	public String permissionAbort = "autoshutdown.abort";
 	public String permissionEnable = "autoshutdown.enable";
@@ -71,7 +72,7 @@ public class Main extends JavaPlugin {
 		
 		logger.info(Prefix + " Der_Bejijing's Autoshutdown loaded!");
 		if(active) {
-			logger.info(Prefix + " Shutdown at [§c" + shutdown + "§r]");
+			logger.info(Prefix + " Shutdown at [" + ChatColor.RED + shutdown + ChatColor.RESET + "]");
 			if(physicalShutdown) {
 				logger.info(Prefix + " Machine will power-off after server shutdown");
 			}
@@ -86,14 +87,13 @@ public class Main extends JavaPlugin {
 		    public void run() {
 		    	if(active) {
 		    		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
-		    		LocalDateTime now = LocalDateTime.now();
-		        	String date = dtf.format(now).toString();
+		        	String date = dtf.format(LocalDateTime.now()).toString();
 		        	
 		        	if(date.equalsIgnoreCase(shutdown)) {
 		        		if(physicalShutdown) {
 		        			ShutdownThread st = new ShutdownThread();
 		        			st.delay = physicalShutdownDelay;
-		            			st.start();
+		            		st.start();
 		        		}
 		        		
 		        		getServer().shutdown();
@@ -102,9 +102,9 @@ public class Main extends JavaPlugin {
 		        	for(int i = 0; i < shutdownWarnings.size(); i++) {
 		        		if(date.equalsIgnoreCase(shutdownDate.minusSeconds(shutdownWarnings.get(i)).format(dtf))) {
 		        			if(shutdownWarnings.get(i) <= 60) {
-		        				Utilities.broadcast("§eShutdown in [§c" + shutdownWarnings.get(i) + "§e] second(s)");
+		        				Utilities.broadcast(ChatColor.YELLOW + "Shutdown in [" + ChatColor.RED + shutdownWarnings.get(i) +  ChatColor.YELLOW + "] second(s)");
 		        			} else {
-		        				Utilities.broadcast("§eShutdown in [§c" + shutdownWarnings.get(i)/60 + "§e] minutes");
+		        				Utilities.broadcast(ChatColor.YELLOW + "Shutdown in [" + ChatColor.RED + shutdownWarnings.get(i)/60 +  ChatColor.YELLOW + "] minutes");
 		        			}
 		        		}
 		        	}
@@ -115,8 +115,7 @@ public class Main extends JavaPlugin {
 	
 	public void adjustShutdownDate() {
 		try {
-			SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
-			shutdownTime = sdf.parse(shutdown);
+			shutdownTime = new SimpleDateFormat("HH:mm:ss").parse(shutdown);
 			shutdownDate = Utilities.convertToLocalDateViaInstant(shutdownTime);
 		} catch(ParseException e) {
 			

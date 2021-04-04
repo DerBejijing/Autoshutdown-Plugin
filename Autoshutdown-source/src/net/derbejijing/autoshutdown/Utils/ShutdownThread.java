@@ -14,7 +14,7 @@ public class ShutdownThread extends Thread {
 		        shutdownCommand = "shutdown -h +" + delay;
 		    }
 		    else if ("Windows".equalsIgnoreCase(operatingSystem)) {
-		        shutdownCommand = "shutdown.exe -s -t " + delay*60;
+		        shutdownCommand = "shutdown -s -t " + delay*60;
 		    }
 		    else {
 		        throw new RuntimeException("Unsupported operating system.");

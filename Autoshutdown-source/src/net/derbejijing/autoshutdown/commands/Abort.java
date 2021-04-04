@@ -1,5 +1,6 @@
 package net.derbejijing.autoshutdown.commands;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -20,11 +21,11 @@ public class Abort implements CommandExecutor {
 				
 				Main.instance.active = false;
 				
-				Utilities.broadcast("§7Shutdown aborted!");
+				Utilities.broadcast(ChatColor.GRAY + "Shutdown aborted!");
 				
 				return true;
 			} else {
-				sender.sendMessage(prefix + " §cShutdown already inactive");
+				sender.sendMessage(prefix + ChatColor.RED + " Shutdown already inactive");
 			}
 		} else sender.sendMessage(prefix + " " + Main.instance.noPermission);
 		return false;
