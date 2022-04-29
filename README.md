@@ -61,11 +61,5 @@ The plugin includes some commands that can be used to modify some of the setting
 `/getshutdown`: Shows when the shutdown is scheduled  
 `/reschedule <time>`: sets the shutdown to the specified time. There is no check for the input, just don't enter garbage :)  
 
-**What you can to do**  
-You are allowed to use this Plugin, modify the sourcecode and include it in other Programms/Plugins/etc, as long as I am always mentioned as the developer.  
-
-**What you cannot do**  
-You are not allowed to use this, for whatever reason, for commercial purposes.  
-
 **Updates and bugfixes**  
 I am always working on finding and eliminating bugs. So if you find one, feel free to cantact me. Another problem is that for some reason the comments disappear after the config is saved... I am still working on that.  
